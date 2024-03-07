@@ -1,13 +1,10 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.banner {
+  background: url(https://ptcdn.info/doodle/2024/5d07273900d01f33da0f618c_cl018k3w7c.png), url(https://ptcdn.info/doodle/2024/5d07273900d01f33da0f618c_l0e1qbuing.png);
+  background-size: auto, cover;
+  background-position: top, bottom;
+  background-repeat: no-repeat, repeat;
 }
