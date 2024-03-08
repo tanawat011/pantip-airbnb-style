@@ -13,11 +13,13 @@ export const Announce = () => {
                 <FaHeart size='20' className='text-black/20' />
               </button>
             </div>
+
             <div className='flex justify-between'>
               <p className='font-semibold text-gray-600'>{title}</p>
               <p className='font-semibold text-gray-600'>...</p>
             </div>
-            <p>{desc}</p>
+
+            <p className='line-clamp-2 text-sm'>{desc}</p>
           </div>
         )
       })}

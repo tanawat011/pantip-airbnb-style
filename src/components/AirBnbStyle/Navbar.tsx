@@ -30,7 +30,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrollStarted, list, itemActive 
             <button
               key={`${label.replaceAll(' ', '-')}-${idx}`}
               className={clsx(
-                'select-none px-4 py-3 rounded-full hover:bg-black/10 transition-all duration-300',
+                'select-none px-4 py-3 rounded-full hover:bg-black/10 transition-all duration-200',
                 isActive && 'text-gray-600 font-bold',
                 scrollStarted && 'text-[0px]',
               )}
@@ -43,14 +43,14 @@ export const Navbar: React.FC<NavbarProps> = ({ scrollStarted, list, itemActive 
 
       <div
         className={clsx(
-          'absolute transition-all duration-300',
+          'absolute transition-all duration-200',
           scrollStarted ? '-top-2.5' : 'top-[calc(100%+theme(space.3))]',
         )}
       >
-        <div className='border border-gray-300 rounded-full shadow-lg flex relative transition-all duration-300'>
+        <div className='border border-gray-300 rounded-full shadow-lg flex relative transition-all duration-200'>
           <button
             className={clsx(
-              'pl-9 pr-6 py-3 hover:bg-black/10 rounded-full cursor-pointer text-start transition-all duration-300',
+              'pl-9 pr-6 py-3 hover:bg-black/10 rounded-full cursor-pointer text-start transition-all duration-200',
               scrollStarted ? 'h-[44px]' : 'h-[68px]',
             )}
           >
@@ -59,7 +59,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrollStarted, list, itemActive 
             <input
               placeholder='Search by Tags'
               className={clsx(
-                'text-sm outline-none bg-transparent transition-all duration-300',
+                'text-sm outline-none bg-transparent transition-all duration-200',
                 scrollStarted ? 'h-0 w-0 opacity-0' : 'h-5 w-40',
               )}
             />
@@ -68,7 +68,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrollStarted, list, itemActive 
           <div className='flex items-center'>
             <hr
               className={clsx(
-                'border-l border-gray-300 w-[1px] transition-all duration-300',
+                'border-l border-gray-300 w-[1px] transition-all duration-200',
                 scrollStarted ? 'h-6' : 'h-9',
               )}
             />
@@ -76,7 +76,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrollStarted, list, itemActive 
 
           <button
             className={clsx(
-              'pl-9 pr-14 py-3 hover:bg-black/10 rounded-full cursor-pointer text-start transition-all duration-300',
+              'pl-9 pr-14 py-3 hover:bg-black/10 rounded-full cursor-pointer text-start transition-all duration-200',
               scrollStarted ? 'h-[44px]' : 'h-[68px]',
             )}
           >
@@ -84,7 +84,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrollStarted, list, itemActive 
 
             <p
               className={clsx(
-                'text-sm text-gray-400 transition-all duration-300',
+                'text-sm text-gray-400 transition-all duration-200',
                 scrollStarted ? 'h-0 w-0 opacity-0' : 'h-5 w-32',
               )}
             >
@@ -94,7 +94,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrollStarted, list, itemActive 
 
           <button
             className={clsx(
-              'absolute transition-all duration-300 bg-[#61dafb] rounded-full hover:bg-sky-500',
+              'absolute transition-all duration-200 bg-[#61dafb] rounded-full hover:bg-sky-500',
               scrollStarted ? 'top-[1.25px] right-[1.25px] p-2 m-1' : 'top-0 right-0 p-4 m-2',
             )}
           >

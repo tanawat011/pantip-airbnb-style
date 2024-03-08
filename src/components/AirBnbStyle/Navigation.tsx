@@ -11,7 +11,7 @@ export const Navigation: React.FC<NavigationProps> = ({ children, scrollStarted 
   return (
     <div className='flex flex-col'>
       <div
-        className={clsx('w-full flex px-10 relative transition-all duration-500')}
+        className={clsx('w-full flex px-10 relative transition-all duration-300')}
         style={{
           height: scrollStarted ? 80 : 168,
         }}
