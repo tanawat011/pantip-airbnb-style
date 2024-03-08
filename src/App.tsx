@@ -2,7 +2,16 @@ import type { UIEvent } from 'react'
 import { useState } from 'react'
 
 import './App.css'
-import { Announce, Content, Header, Logo, MenuBar, Navbar, Navigation, RightNavigation } from './components/AirBnbStyle'
+import {
+  Announce,
+  Content,
+  Header,
+  LeftNavigation,
+  MenuBar,
+  Navbar,
+  Navigation,
+  RightNavigation,
+} from './components/AirBnbStyle'
 import { menu, navigationMenu } from './mocks'
 
 function App() {
@@ -15,12 +24,16 @@ function App() {
   }
 
   return (
-    <div id='body' className='font-roboto overflow-y-scroll overflow-x-hidden h-screen' onScroll={handleScroll}>
+    <div
+      id='body'
+      className='font-roboto overflow-y-scroll overflow-x-hidden h-screen relative'
+      onScroll={handleScroll}
+    >
       <Header scrollStarted={scrollStarted}>
         <Navigation scrollStarted={scrollStarted}>
           <div className='w-full flex flex-col'>
             <div className='w-full flex items-center justify-between h-[80px]'>
-              <Logo />
+              <LeftNavigation list={navigationMenu} itemActive='/' />
 
               <Navbar scrollStarted={scrollStarted} list={navigationMenu} itemActive='/' />
 

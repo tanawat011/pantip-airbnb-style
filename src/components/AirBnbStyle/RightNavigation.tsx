@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import clsx from 'clsx'
 import ReactCountryFlag from 'react-country-flag'
@@ -15,6 +15,12 @@ type RightNavigationProps = {
 }
 
 export const RightNavigation: React.FC<RightNavigationProps> = () => {
+  const [openModalSearch, setOpenModalSearch] = useState(false)
+
+  const handleToggleModalSearch = () => {
+    setOpenModalSearch(!openModalSearch)
+  }
+
   return (
     <div className='flex items-center justify-end'>
       <div className='relative hidden sm:block md:hidden'>
@@ -33,6 +39,7 @@ export const RightNavigation: React.FC<RightNavigationProps> = () => {
       </div>
 
       <button
+        onClick={handleToggleModalSearch}
         className={clsx(
           'bg-[#61dafb] rounded-full hover:bg-sky-500 p-1 px-3 text-white shadow-lg',
           'flex items-center justify-center gap-1 sm:hidden',
@@ -102,6 +109,31 @@ export const RightNavigation: React.FC<RightNavigationProps> = () => {
           },
         ]}
       />
+
+      {openModalSearch && (
+        <div className='fixed w-full h-screen top-0 left-0 flex items-center justify-center'>
+          <div className='fixed inset-0 bg-black/50' onClick={handleToggleModalSearch} />
+
+          <div className=' absolute bg-white p-3 px-4 rounded-xl'>
+            <div className='relative'>
+              <input
+                placeholder='Search'
+                className={clsx(
+                  'w-full outline-none border border-gray-300 rounded-full shadow-lg px-6 pr-12 text-sm py-2',
+                )}
+              />
+
+              <button
+                className={clsx(
+                  'absolute transition-all duration-200 bg-[#61dafb] rounded-full hover:bg-sky-500 top-0 right-0 p-1 m-1.5 border border-transparent',
+                )}
+              >
+                <FaSistrix className='text-white' />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
