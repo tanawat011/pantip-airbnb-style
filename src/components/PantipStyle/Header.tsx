@@ -1,5 +1,6 @@
 import { FaBars, FaSistrix, FaCommentMedical, FaPeopleGroup } from 'react-icons/fa6'
 import { IoLogoReact } from 'react-icons/io5'
+
 import { headerHeight } from '../../constants'
 
 export const Header = () => {

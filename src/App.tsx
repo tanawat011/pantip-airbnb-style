@@ -1,7 +1,9 @@
+import type { UIEvent } from 'react'
+import { useState } from 'react'
+
 import './App.css'
 import { Announce, Content, Header, Logo, MenuBar, Navbar, Navigation, RightNavigation } from './components/AirBnbStyle'
 import { menu, navigationMenu } from './mocks'
-import { UIEvent, useState } from 'react'
 
 function App() {
   const [scrollStarted, setScrollStarted] = useState(false)
@@ -13,7 +15,7 @@ function App() {
   }
 
   return (
-    <div className='font-roboto overflow-y-scroll h-screen' onScroll={handleScroll}>
+    <div className='font-roboto overflow-y-scroll overflow-x-hidden h-screen' onScroll={handleScroll}>
       <Header scrollStarted={scrollStarted}>
         <Navigation scrollStarted={scrollStarted}>
           <Logo />
