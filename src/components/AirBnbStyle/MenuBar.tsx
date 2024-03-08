@@ -16,15 +16,17 @@ type MenuBarProps = {
 }
 
 export const MenuBar: React.FC<MenuBarProps> = ({ list, itemActive, forMobile, className }) => {
+  const newList = forMobile ? [...list.slice(0, 4)] : [...list]
+
   return (
     <div
       className={clsx(
-        'w-full items-center justify-center gap-4 border-t border-gray-300 h-[78px] px-10 pt-3',
+        'w-full items-center justify-center gap-0 xs:gap-2 sm:gap-4 border-t border-gray-300 h-[78px] sm:px-10 pt-3',
         className,
         forMobile ? 'flex md:hidden' : 'hidden md:flex',
       )}
     >
-      {list.map(({ label, icon }, idx) => {
+      {newList.map(({ label, icon }, idx) => {
         const isActive = label === itemActive
 
         return (
