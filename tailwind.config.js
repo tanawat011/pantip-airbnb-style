@@ -17,6 +17,7 @@ module.exports = {
         'primary': '#3c3963',
         'secondary': '#353156',
         'tertiary': '#2d2a49',
+        'accent': '#44416f',
       },
       fontFamily: {
         'roboto': ['Roboto', 'sans-serif'],

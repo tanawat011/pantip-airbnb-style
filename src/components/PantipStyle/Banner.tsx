@@ -1,4 +1,4 @@
-import { bannerHeight } from '../constants'
+import { bannerHeight } from '../../constants'
 
 export const Banner = () => {
   return (

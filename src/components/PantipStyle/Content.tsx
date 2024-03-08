@@ -1,5 +1,5 @@
 import React from 'react'
-import { bannerHeight } from '../constants'
+import { bannerHeight } from '../../constants'
 
 type ContentProps = {
   children: React.ReactNode

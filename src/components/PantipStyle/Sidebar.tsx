@@ -1,4 +1,4 @@
-import { headerHeight, sidebarWidth } from '../constants'
+import { headerHeight, sidebarWidth } from '../../constants'
 
 export const Sidebar = () => {
   return (
