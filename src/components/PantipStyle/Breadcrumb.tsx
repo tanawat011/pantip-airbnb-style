@@ -1,4 +1,5 @@
 import { FaAnglesRight } from 'react-icons/fa6'
+
 import { breadcrumbHeight } from '../../constants'
 
 export const Breadcrumb = () => {

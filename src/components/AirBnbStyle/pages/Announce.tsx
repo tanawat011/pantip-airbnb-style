@@ -1,4 +1,5 @@
 import { FaHeart } from 'react-icons/fa6'
+
 import { announces } from '../../../mocks'
 
 export const Announce = () => {
