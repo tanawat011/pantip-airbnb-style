@@ -11,12 +11,12 @@ export const Navigation: React.FC<NavigationProps> = ({ children, scrollStarted 
   return (
     <div className='flex flex-col'>
       <div
-        className={clsx('w-full flex px-10 relative transition-all duration-300')}
-        style={{
-          height: scrollStarted ? 80 : 168,
-        }}
+        className={clsx(
+          'w-full flex px-10 relative transition-all duration-300',
+          scrollStarted ? 'h-[80px]' : 'h-[80px] md:h-[240px] base:h-[168px]',
+        )}
       >
-        <div className='w-full flex items-center justify-between h-[80px]'>{children}</div>
+        {children}
       </div>
     </div>
   )

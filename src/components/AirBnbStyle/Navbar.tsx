@@ -12,11 +12,20 @@ type NavbarProps = {
   scrollStarted?: boolean
   list: NavMenuItem[]
   itemActive?: string
+  className?: string
+  forMobile?: boolean
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ scrollStarted, list, itemActive }) => {
+export const Navbar: React.FC<NavbarProps> = ({ scrollStarted, list, itemActive, className, forMobile }) => {
   return (
-    <div className='flex flex-col items-center justify-center relative'>
+    <div
+      className={clsx(
+        'flex-col items-center justify-center relative transition-all duration-200 hidden',
+        className,
+        forMobile ? 'md:flex base:hidden' : 'base:flex',
+        scrollStarted && forMobile && '!absolute top-7 left-48',
+      )}
+    >
       <div
         className={clsx(
           'flex items-center justify-center px-6 font-semibold text-gray-400 transition-all animate-fade',

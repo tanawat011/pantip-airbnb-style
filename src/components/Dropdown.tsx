@@ -51,7 +51,7 @@ export const Dropdown: React.FC<DropdownProps> = ({ label, className, width = 20
       <div
         ref={refMenu}
         className={clsx(
-          'absolute right-0 mt-2 py-2 bg-white shadow-gray-400 shadow rounded-xl transition-all [&>*]:transition-all',
+          'absolute right-0 mt-2 py-2 bg-white shadow-gray-400 shadow z-20 rounded-xl transition-all [&>*]:transition-all',
           !openMenu && '[&>*]:px-0 [&>*]:py-0 [&>*]:text-[0px]',
         )}
         style={{

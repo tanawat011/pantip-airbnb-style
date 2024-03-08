@@ -15,22 +15,32 @@ function App() {
   }
 
   return (
-    <div className='font-roboto overflow-y-scroll overflow-x-hidden h-screen' onScroll={handleScroll}>
+    <div id='body' className='font-roboto overflow-y-scroll overflow-x-hidden h-screen' onScroll={handleScroll}>
       <Header scrollStarted={scrollStarted}>
         <Navigation scrollStarted={scrollStarted}>
-          <Logo />
+          <div className='w-full flex flex-col'>
+            <div className='w-full flex items-center justify-between h-[80px]'>
+              <Logo />
 
-          <Navbar scrollStarted={scrollStarted} list={navigationMenu} itemActive='/' />
+              <Navbar scrollStarted={scrollStarted} list={navigationMenu} itemActive='/' />
 
-          <RightNavigation />
+              <RightNavigation scrollStarted={scrollStarted} />
+            </div>
+
+            <Navbar scrollStarted={scrollStarted} list={navigationMenu} itemActive='/' forMobile />
+          </div>
         </Navigation>
 
-        <MenuBar list={menu} itemActive='Announce' />
+        <MenuBar list={menu} itemActive='Announce' className='mb-4' />
       </Header>
 
       <Content>
         <Announce />
       </Content>
+
+      <div className='sticky bottom-0 w-full bg-white py-2'>
+        <MenuBar list={menu} itemActive='Announce' forMobile />
+      </div>
     </div>
   )
 }

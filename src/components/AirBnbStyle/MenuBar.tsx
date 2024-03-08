@@ -11,11 +11,19 @@ export type MenuItem = {
 type MenuBarProps = {
   list: MenuItem[]
   itemActive?: string
+  forMobile?: boolean
+  className?: string
 }
 
-export const MenuBar: React.FC<MenuBarProps> = ({ list, itemActive }) => {
+export const MenuBar: React.FC<MenuBarProps> = ({ list, itemActive, forMobile, className }) => {
   return (
-    <div className='w-full flex items-center justify-center gap-4 border-t border-gray-300 h-[78px] px-10 pt-3 mb-4'>
+    <div
+      className={clsx(
+        'w-full items-center justify-center gap-4 border-t border-gray-300 h-[78px] px-10 pt-3',
+        className,
+        forMobile ? 'flex md:hidden' : 'hidden md:flex',
+      )}
+    >
       {list.map(({ label, icon }, idx) => {
         const isActive = label === itemActive
 

@@ -28,7 +28,7 @@ export const Popover: React.FC<PopoverProps> = ({ label, className, desc, childr
 
       <div
         className={clsx(
-          'absolute right-0 mb-1 px-3 py-1 bg-white shadow-gray-400 shadow rounded-xl text-xs text-gray-400 whitespace-nowrap max-w-[208px] transition-all [&>*]:transition-all',
+          'absolute right-0 mb-1 px-3 py-1 bg-white shadow-gray-400 shadow rounded-xl text-xs z-20 text-gray-400 whitespace-nowrap max-w-[208px] transition-all [&>*]:transition-all',
           openMenu ? 'opacity-100' : 'opacity-0 [&>*]:px-0 [&>*]:py-0 [&>*]:text-[0px]',
         )}
       >

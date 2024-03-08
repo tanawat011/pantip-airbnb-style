@@ -1,6 +1,6 @@
 export * from './Content'
 export * from './Header'
-export * from './Logo'
+export * from './LeftNavigation'
 export * from './MenuBar'
 export * from './Navbar'
 export * from './Navigation'

@@ -1,5 +1,8 @@
+import React from 'react'
+
+import clsx from 'clsx'
 import ReactCountryFlag from 'react-country-flag'
-import { FaBars, FaEarthAsia, FaUser, FaGear, FaPeopleGroup, FaCommentMedical } from 'react-icons/fa6'
+import { FaBars, FaEarthAsia, FaUser, FaGear, FaPeopleGroup, FaCommentMedical, FaSistrix } from 'react-icons/fa6'
 import { GrDocumentText } from 'react-icons/gr'
 import { LuHelpingHand } from 'react-icons/lu'
 import { PiSignInBold, PiSignOutBold } from 'react-icons/pi'
@@ -7,9 +10,39 @@ import { PiSignInBold, PiSignOutBold } from 'react-icons/pi'
 import { Dropdown } from '../Dropdown'
 import { Popover } from '../Popover'
 
-export const RightNavigation = () => {
+type RightNavigationProps = {
+  scrollStarted?: boolean
+}
+
+export const RightNavigation: React.FC<RightNavigationProps> = () => {
   return (
     <div className='flex items-center justify-end'>
+      <div className='relative hidden sm:block md:hidden'>
+        <input
+          placeholder='Search'
+          className={clsx('w-full outline-none border border-gray-300 rounded-full shadow-lg px-6 pr-12 text-sm py-2')}
+        />
+
+        <button
+          className={clsx(
+            'absolute transition-all duration-200 bg-[#61dafb] rounded-full hover:bg-sky-500 top-0 right-0 p-1 m-1.5 border border-transparent',
+          )}
+        >
+          <FaSistrix className='text-white' />
+        </button>
+      </div>
+
+      <button
+        className={clsx(
+          'bg-[#61dafb] rounded-full hover:bg-sky-500 p-1 px-3 text-white shadow-lg',
+          'flex items-center justify-center gap-1 sm:hidden',
+        )}
+      >
+        <FaSistrix className='text-white' />
+
+        <p>search</p>
+      </button>
+
       <div className='mr-2 flex'>
         <Popover label={<FaCommentMedical size='16' />} className='!px-3 rounded-full hover:bg-black/10'>
           Post a Topic
@@ -39,7 +72,7 @@ export const RightNavigation = () => {
       <Dropdown
         label={
           <>
-            <FaBars size='16' />
+            <FaBars size='16' className='hidden sm:block' />
 
             <FaUser size='16' />
           </>
